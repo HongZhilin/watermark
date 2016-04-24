@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<!--设置开发模式，请求后缀的配置 -->
+	<constant name="struts.action.extension" value="action" />
+	<!--设置编码形式为UTF-8 -->
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<!--省略其他配置信息 -->
+	<constant name="struts.multipart.maxSize" value="1073741824" />
+
+	<!-- 设置上传文件的临时文件夹 -->
+	<constant name="struts.multipart.saveDir" value="/tmpUpload" />
+
+	<package name="default" extends="struts-default">
+		<action name="watermark" class="com.watermark.WaterMarkAction" method="watermark">
+			<param name="uploadPath">/images</param>
+			<result name="success">watermark.jsp</result>
+		</action>
+
+	</package>
+
+</struts>
